@@ -1,0 +1,202 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE web-app PUBLIC "-//Sun Microsystems, Inc.//DTD Web Application 2.2//EN" "http://java.sun.com/j2ee/dtds/web-app_2.2.dtd">
+
+<web-app>
+  <!-- Version number parameters -->
+  <context-param>
+    <param-name>version-number</param-name>
+    <param-value>@version_string@</param-value>
+  </context-param>
+  <context-param>
+    <param-name>build-date</param-name>
+    <param-value>@build_date@ @build_time@</param-value>
+  </context-param>
+	<!-- SERVLETS -->
+
+  <servlet>
+    <servlet-name>EditVendors</servlet-name>
+    <servlet-class>edu.ucsd.library.apbatch.EditVendors</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>EditVendors</servlet-name>
+    <url-pattern>/servlets/EditVendors</url-pattern>
+  </servlet-mapping>
+
+	<servlet>
+    <servlet-name>EditIndexes</servlet-name>
+    <servlet-class>edu.ucsd.library.apbatch.EditIndexes</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>EditIndexes</servlet-name>
+    <url-pattern>/servlets/EditIndexes</url-pattern>
+  </servlet-mapping>
+
+  <servlet>
+    <servlet-name>UploadOutFile</servlet-name>
+    <servlet-class>edu.ucsd.library.apbatch.UploadOutFile</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>UploadOutFile</servlet-name>
+    <url-pattern>/servlets/UploadOutFile</url-pattern>
+  </servlet-mapping>
+    
+    <servlet>
+    <servlet-name>SendOutputFiles</servlet-name>
+    <servlet-class>edu.ucsd.library.apbatch.SendOutputFiles</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>SendOutputFiles</servlet-name>
+    <url-pattern>/servlets/SendOutputFiles</url-pattern>
+  </servlet-mapping>  
+      
+  <servlet>
+    <servlet-name>ProcessOutputData</servlet-name>
+    <servlet-class>edu.ucsd.library.apbatch.ProcessOutputData</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ProcessOutputData</servlet-name>
+    <url-pattern>/servlets/ProcessOutputData</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+    <servlet-name>ModifyQueues</servlet-name>
+    <servlet-class>edu.ucsd.library.apbatch.ModifyQueues</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ModifyQueues</servlet-name>
+    <url-pattern>/servlets/ModifyQueues</url-pattern>
+  </servlet-mapping>
+  
+    <servlet>
+    <servlet-name>GetProblemQueueData</servlet-name>
+    <servlet-class>edu.ucsd.library.apbatch.GetProblemQueueData</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>GetProblemQueueData</servlet-name>
+    <url-pattern>/servlets/GetProblemQueueData</url-pattern>
+  </servlet-mapping>  
+  
+    <servlet>
+    <servlet-name>EditProblemQueueData</servlet-name>
+    <servlet-class>edu.ucsd.library.apbatch.EditProblemQueueData</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>EditProblemQueueData</servlet-name>
+    <url-pattern>/servlets/EditProblemQueueData</url-pattern>
+  </servlet-mapping>
+  
+    
+    <servlet>
+    <servlet-name>GetSessionData</servlet-name>
+    <servlet-class>edu.ucsd.library.apbatch.GetSessionData</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>GetSessionData</servlet-name>
+    <url-pattern>/servlets/GetSessionData</url-pattern>
+  </servlet-mapping>
+  
+      
+    <servlet>
+    <servlet-name>MoveToOtherQueues</servlet-name>
+    <servlet-class>edu.ucsd.library.apbatch.MoveToOtherQueues</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>MoveToOtherQueues</servlet-name>
+    <url-pattern>/servlets/MoveToOtherQueues</url-pattern>
+     </servlet-mapping>
+    
+     <servlet>
+    <servlet-name>GetTotal</servlet-name>
+    <servlet-class>edu.ucsd.library.apbatch.GetTotal</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>GetTotal</servlet-name>
+    <url-pattern>/servlets/GetTotal</url-pattern>
+  </servlet-mapping>
+  
+  
+  
+     <servlet>
+    <servlet-name>CheckExtFundCode</servlet-name>
+    <servlet-class>edu.ucsd.library.apbatch.CheckExtFundCode</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>CheckExtFundCode</servlet-name>
+    <url-pattern>/servlets/CheckExtFundCode</url-pattern>
+  </servlet-mapping>
+  
+  <!-- REFERENCES -->
+  <resource-ref>
+     <description>Reference to the datasource</description>
+     <res-ref-name>jdbc/apbatch</res-ref-name>
+     <res-type>javax.sql.DataSource</res-type>
+     <res-auth>Container</res-auth>
+   </resource-ref>
+
+	<resource-ref>
+		<!--HR/Libnet database-->
+		<res-ref-name>jdbc/authzt</res-ref-name>
+		<res-type>javax.sql.DataSource</res-type>
+		<res-auth>Container</res-auth>
+	</resource-ref>
+	    
+  <resource-ref>
+    <description>libnet db</description>
+    <res-ref-name>libnet</res-ref-name>
+    <res-type>javax.sql.DataSource</res-type>
+    <res-auth>Container</res-auth>
+  </resource-ref>
+  <resource-ref>
+    <description>Environment Variable</description>
+    <res-ref-name>clusterHostName</res-ref-name>
+    <res-type>java.lang.String</res-type>
+    <res-auth>Container</res-auth>
+  </resource-ref>
+  <resource-ref>
+    <description>Environment Variable</description>
+    <res-ref-name>clusterSharedPath</res-ref-name>
+    <res-type>java.lang.String</res-type>
+    <res-auth>Container</res-auth>
+  </resource-ref>
+  <resource-ref>
+    <description>Environment Variable</description>
+    <res-ref-name>apbatchFilePath</res-ref-name>
+    <res-type>java.lang.String</res-type>
+    <res-auth>Container</res-auth>
+  </resource-ref>  
+  <!-- SECURITY -->
+  <security-constraint>
+    <web-resource-collection>
+      <web-resource-name>Protected Area</web-resource-name>
+      <url-pattern>/*</url-pattern>
+      <http-method>DELETE</http-method>
+      <http-method>GET</http-method>
+      <http-method>POST</http-method>
+      <http-method>PUT</http-method>
+    </web-resource-collection>
+    <auth-constraint>
+      <description>Users in the AD Billing - Circ Group</description>
+      <role-name>ACQ_APBatch</role-name>
+      <role-name>IT Development</role-name>
+    </auth-constraint>
+    <user-data-constraint>
+      <transport-guarantee>NONE</transport-guarantee>
+    </user-data-constraint>
+  </security-constraint>
+  <!-- LOGIN -->
+    <login-config>        
+        <auth-method>FORM</auth-method>
+        <realm-name>Authentication Required</realm-name>
+        <form-login-config>
+            <form-login-page>/login/login.jsp</form-login-page>
+            <form-error-page>/login/error.jsp</form-error-page>
+        </form-login-config>
+    </login-config>
+  <!-- AD ROLES -->
+  <security-role>
+    <role-name>ACQ_APBatch</role-name>
+    <role-name>IT Development</role-name>
+  </security-role>
+
+  <distributable/>
+</web-app>
