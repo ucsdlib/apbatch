@@ -254,10 +254,10 @@ public class EditIndexes extends HttpServlet {
 			}
 
 			pstmt = conn.prepareStatement(
-					" UPDATE GLINDEX A " +
-					" SET A.AC_INDEX = ?, A.AC_FUND = ?, A.AC_ORG = ?, " +
-					" A.AC_PROG = ?, A.AC_TITLE = ? " +
-					" WHERE A.AC_INDEX = ? "
+					" UPDATE GLINDEX" +
+					" SET AC_INDEX = ?, AC_FUND = ?, AC_ORG = ?, " +
+					" AC_PROG = ?, AC_TITLE = ? " +
+					" WHERE AC_INDEX = ? "
 					);
 
 			pstmt.setString(1, index);

@@ -22,7 +22,7 @@ public class BillingHelperTest {
 	
 	  @Before
 	  public void setUp() throws Exception {
-		file=new File(System.getProperty("user.dir").replace("apbatch","")+"/apbatch/src/fixtures/WB100313.out");
+		file=new File(System.getProperty("user.dir")+"/src/fixtures/WB100313.out");
 	    processor = new ProcessFile(new FileInputStream(file));
 	    processor.useTestConnection = true;
 	    billing = new BillingHelper(true);
@@ -38,7 +38,7 @@ public class BillingHelperTest {
 
 	  @Test
 	  public void validateData() throws java.io.FileNotFoundException{	
-		BufferedReader in = new BufferedReader(new FileReader(System.getProperty("user.dir").replace("apbatch","")+"/apbatch/tmp/APCHECK.txt"));;
+		BufferedReader in = new BufferedReader(new FileReader(System.getProperty("user.dir")+"/tmp/APCHECK.txt"));;
 		try {
 		  int count = 1;
 		  boolean isValidate = true;
