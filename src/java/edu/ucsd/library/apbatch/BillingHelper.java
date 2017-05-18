@@ -453,7 +453,7 @@ public class BillingHelper {
 			//System.out.println("last vendor code:"+((String)lastObj.get("vendorCode")).trim() + "-tax code"+getTaxCode(((String)lastObj.get("vendorCode")).trim().toUpperCase()));
 			//log.info("$$$ Last voucher no:"+lastVoucherNo);
 			String tempVenderCode = null;
-			File f = new File(System.getProperty("user.dir").replace("apbatch","")+"/apbatch/tmp/"+fileName);
+			File f = new File(System.getProperty("user.dir")+"/tmp/"+fileName);
 			if(!f.exists())
 			    f.createNewFile();
 			else {

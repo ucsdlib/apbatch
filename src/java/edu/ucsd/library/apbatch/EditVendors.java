@@ -282,10 +282,10 @@ public class EditVendors extends HttpServlet {
 			}
 
 			pstmt = conn.prepareStatement(
-					" UPDATE VENDORS A " +
-					" SET A.VENDCODE = ?, A.NAME = ?, A.ADDR_TYPE = ?, " +
-					" A.TAXCODE = ?, A.PAYEE_ID = ?, A.NOTES = ? " +
-					" WHERE A.VENDID = ? "
+					" UPDATE VENDORS " +
+					" SET VENDCODE = ?, NAME = ?, ADDR_TYPE = ?, " +
+					" TAXCODE = ?, PAYEE_ID = ?, NOTES = ? " +
+					" WHERE VENDID = ? "
 					);
 
 			pstmt.setString(1, vendor_code);

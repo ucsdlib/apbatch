@@ -17,7 +17,7 @@ public class ProcessFileTest {
   String sum = "", total = "", result = "", problemTotal = "";
   @Before
   public void setUp() throws Exception {
-	file=new File(System.getProperty("user.dir").replace("apbatch","")+"/apbatch/src/fixtures/WB100313.out");
+	file=new File(System.getProperty("user.dir")+"/src/fixtures/WB100313.out");
     processor = new ProcessFile(new FileInputStream(file));
     processor.useTestConnection = true;
 	sum = "17450.3"; ;
