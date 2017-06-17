@@ -20,38 +20,17 @@
 	
 	<!-- classpath -->
 	<path id="classpath">
-
 		<fileset id="lib" dir="${lib}" includes="*" />
-
-		<fileset id="extlib" dir="${jars.home}">
-			<include name="dom4j-full.jar" />
-			<include name="commons-httpclient.jar" />
-			<include name="json_simple.jar" />
-			<include name="commons-beanutils-1.8.0.jar" />
-			<include name="commons-lang-2.3.jar" />
-			<include name="jconn.jar" />
-			<include name="cos.jar" />
-			<include name="junit-4.10.jar" />
-			<include name="ojdbc14.jar" />
-		</fileset>
-
-		<!-- compile only -->
-		<fileset id="compile-only3" dir="${jars.home}">
-			<include name="servlet.jar" />
-			<include name="catalina-ant.jar" />
-			<include name="library_package.jar" />
-			<include name="library_security.jar" />
-			<include name="log4j-1.2.8.jar" />
-			<include name="db2jcc_license_cu.jar" />
-			<include name="db2jcc.jar" />
-		</fileset>
 	</path>
 
 	<fileset id="root" dir="${src}/root" includes="**/*" />
 
 	<!-- import common properties and tasks -->
-	<import file="${common.home}/common.xml" />
-    	
+	<import file="common.xml" />
+	<import file="version.xml" />
+	<import file="profile.xml" />
+	<import file="remote.xml" />
+	
 	<target name="junit" depends="webapp">
 		<mkdir dir="${report.dir}" />
 		<touch file="${tmp}/APCHECK.txt" />
