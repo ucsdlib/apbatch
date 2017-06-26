@@ -26,10 +26,10 @@
 	<fileset id="root" dir="${src}/root" includes="**/*" />
 
 	<!-- import common properties and tasks -->
-	<import file="common.xml" />
-	<import file="version.xml" />
-	<import file="profile.xml" />
-	<import file="remote.xml" />
+	<import file="common/common.xml" />
+	<import file="common/version.xml" />
+	<import file="common/profile.xml" />
+	<import file="common/remote.xml" />
 	
 	<target name="junit" depends="webapp">
 		<mkdir dir="${report.dir}" />
