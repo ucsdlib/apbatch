@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<testsuite errors="1" failures="0" hostname="mac13443.ucsd.edu" name="edu.ucsd.library.apbatch.JunitTestSuite" skipped="0" tests="1" time="0.07" timestamp="2017-06-26T18:39:40">
+  <properties>
+    <property name="java.vendor" value="Oracle Corporation" />
+    <property name="filtered" value="/Users/tchu/Downloads/work/appbatch-ucsd/apbatch/tmp/filtered" />
+    <property name="sun.java.launcher" value="SUN_STANDARD" />
+    <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers" />
+    <property name="dist" value="/Users/tchu/Downloads/work/appbatch-ucsd/apbatch/dist" />
+    <property name="lib" value="/Users/tchu/Downloads/work/appbatch-ucsd/apbatch/src/lib" />
+    <property name="os.name" value="Mac OS X" />
+    <property name="java" value="/Users/tchu/Downloads/work/appbatch-ucsd/apbatch/src/java" />
+    <property name="sun.boot.class.path" value="/Library/Java/JavaVirtualMachines/jdk1.8.0_45.jdk/Contents/Home/jre/lib/resources.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_45.jdk/Contents/Home/jre/lib/rt.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_45.jdk/Contents/Home/jre/lib/sunrsasign.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_45.jdk/Contents/Home/jre/lib/jsse.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_45.jdk/Contents/Home/jre/lib/jce.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_45.jdk/Contents/Home/jre/lib/charsets.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_45.jdk/Contents/Home/jre/lib/jfr.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_45.jdk/Contents/Home/jre/classes" />
+    <property name="tmp" value="/Users/tchu/Downloads/work/appbatch-ucsd/apbatch/tmp" />
+    <property name="TODAY" value="June 26 2017" />
+    <property name="major.version" value="1" />
+    <property name="ant.file.type.common" value="file" />
+    <property name="build.number" value="718" />
+    <property name="java.vm.specification.vendor" value="Oracle Corporation" />
+    <property name="ant.file.type.profile" value="file" />
+    <property name="ant.home" value="/usr/local/Cellar/ant/1.9.6/libexec" />
+    <property name="java.runtime.version" value="1.8.0_45-b14" />
+    <property name="user.name" value="tchu" />
+    <property name="ant.file.remote" value="/Users/tchu/Downloads/work/appbatch-ucsd/apbatch/remote.xml" />
+    <property name="api" value="/Users/tchu/Downloads/work/appbatch-ucsd/apbatch/doc/api" />
+    <property name="user.language" value="en" />
+    <property name="sun.boot.library.path" value="/Library/Java/JavaVirtualMachines/jdk1.8.0_45.jdk/Contents/Home/jre/lib" />
+    <property name="ant.project.default-target" value="junitreport" />
+    <property name="ant.project.name" value="apbatch" />
+    <property name="DSTAMP" value="20170626" />
+    <property name="java.version" value="1.8.0_45" />
+    <property name="metainf" value="/Users/tchu/Downloads/work/appbatch-ucsd/apbatch/src/metainf" />
+    <property name="ant.file.type.version" value="file" />
+    <property name="user.timezone" value="America/Los_Angeles" />
+    <property name="webapp" value="/Users/tchu/Downloads/work/appbatch-ucsd/apbatch/tmp/webapp" />
+    <property name="sun.arch.data.model" value="64" />
+    <property name="comment" value="Automatic version numbering, see common/version.xml" />
+    <property name="http.nonProxyHosts" value="local|*.local|169.254/16|*.169.254/16" />
+    <property name="ant.file.apbatch" value="/Users/tchu/Downloads/work/appbatch-ucsd/apbatch/build.xml" />
+    <property name="java.endorsed.dirs" value="/Library/Java/JavaVirtualMachines/jdk1.8.0_45.jdk/Contents/Home/jre/lib/endorsed" />
+    <property name="sun.cpu.isalist" value="" />
+    <property name="sun.jnu.encoding" value="UTF-8" />
+    <property name="file.encoding.pkg" value="sun.io" />
+    <property name="build_date" value="2017-06-26" />
+    <property name="file.separator" value="/" />
+    <property name="java.specification.name" value="Java Platform API Specification" />
+    <property name="java.class.version" value="52.0" />
+    <property name="src" value="/Users/tchu/Downloads/work/appbatch-ucsd/apbatch/src" />
+    <property name="user.country" value="US" />
+    <property name="java.home" value="/Library/Java/JavaVirtualMachines/jdk1.8.0_45.jdk/Contents/Home/jre" />
+    <property name="java.vm.info" value="mixed mode" />
+    <property name="ant.file" value="/Users/tchu/Downloads/work/appbatch-ucsd/apbatch/build.xml" />
+    <property name="os.version" value="10.10.5" />
+    <property name="webinf" value="/Users/tchu/Downloads/work/appbatch-ucsd/apbatch/src/webinf" />
+    <property name="ant.file.profile" value="/Users/tchu/Downloads/work/appbatch-ucsd/apbatch/profile.xml" />
+    <property name="path.separator" value=":" />
+    <property name="java.vm.version" value="25.45-b02" />
+    <property name="report.dir" value="/Users/tchu/Downloads/work/appbatch-ucsd/apbatch/tmp/junitreport" />
+    <property name="ant.library.dir" value="/usr/local/Cellar/ant/1.9.6/libexec/lib" />
+    <property name="ant.file.type.remote" value="file" />
+    <property name="java.awt.printerjob" value="sun.lwawt.macosx.CPrinterJob" />
+    <property name="sun.io.unicode.encoding" value="UnicodeBig" />
+    <property name="awt.toolkit" value="sun.lwawt.macosx.LWCToolkit" />
+    <property name="socksNonProxyHosts" value="local|*.local|169.254/16|*.169.254/16" />
+    <property name="ftp.nonProxyHosts" value="local|*.local|169.254/16|*.169.254/16" />
+    <property name="user.home" value="/Users/tchu" />
+    <property name="java.specification.vendor" value="Oracle Corporation" />
+    <property name="minor.version" value="2" />
+    <property name="props" value="./src" />
+    <property name="java.library.path" value="/Users/tchu/Library/Java/Extensions:/Library/Java/Extensions:/Network/Library/Java/Extensions:/System/Library/Java/Extensions:/usr/lib/java:." />
+    <property name="java.vendor.url" value="http://java.oracle.com/" />
+    <property name="java.vm.vendor" value="Oracle Corporation" />
+    <property name="ant.file.version" value="/Users/tchu/Downloads/work/appbatch-ucsd/apbatch/version.xml" />
+    <property name="gopherProxySet" value="false" />
+    <property name="build_time" value="11:39:38" />
+    <property name="java.runtime.name" value="Java(TM) SE Runtime Environment" />
+    <property name="ant.version" value="Apache Ant(TM) version 1.9.6 compiled on June 29 2015" />
+    <property name="sun.java.command" value="org.apache.tools.ant.taskdefs.optional.junit.JUnitTestRunner edu.ucsd.library.apbatch.JunitTestSuite skipNonTests=false filtertrace=true haltOnError=false haltOnFailure=false formatter=org.apache.tools.ant.taskdefs.optional.junit.SummaryJUnitResultFormatter showoutput=false outputtoformatters=true logfailedtests=true threadid=0 logtestlistenerevents=false formatter=org.apache.tools.ant.taskdefs.optional.junit.XMLJUnitResultFormatter,/Users/tchu/Downloads/work/appbatch-ucsd/apbatch/tmp/junitreport/TEST-edu.ucsd.library.apbatch.JunitTestSuite.xml crashfile=/Users/tchu/Downloads/work/appbatch-ucsd/apbatch/junitvmwatcher6701047331834525289.properties propsfile=/Users/tchu/Downloads/work/appbatch-ucsd/apbatch/junit7892490219943192699.properties" />
+    <property name="java.class.path" value="/Users/tchu/Downloads/work/appbatch-ucsd/apbatch/src/lib/catalina-ant.jar:/Users/tchu/Downloads/work/appbatch-ucsd/apbatch/src/lib/commons-beanutils-1.8.0.jar:/Users/tchu/Downloads/work/appbatch-ucsd/apbatch/src/lib/commons-httpclient.jar:/Users/tchu/Downloads/work/appbatch-ucsd/apbatch/src/lib/commons-lang-2.3.jar:/Users/tchu/Downloads/work/appbatch-ucsd/apbatch/src/lib/commons-net-2.0.jar:/Users/tchu/Downloads/work/appbatch-ucsd/apbatch/src/lib/cos.jar:/Users/tchu/Downloads/work/appbatch-ucsd/apbatch/src/lib/db2jcc.jar:/Users/tchu/Downloads/work/appbatch-ucsd/apbatch/src/lib/db2jcc_license_cu.jar:/Users/tchu/Downloads/work/appbatch-ucsd/apbatch/src/lib/dom4j-full.jar:/Users/tchu/Downloads/work/appbatch-ucsd/apbatch/src/lib/jconn.jar:/Users/tchu/Downloads/work/appbatch-ucsd/apbatch/src/lib/json_simple.jar:/Users/tchu/Downloads/work/appbatch-ucsd/apbatch/src/lib/junit-4.10.jar:/Users/tchu/Downloads/work/appbatch-ucsd/apbatch/src/lib/library_package.jar:/Users/tchu/Downloads/work/appbatch-ucsd/apbatch/src/lib/library_shared.jar:/Users/tchu/Downloads/work/appbatch-ucsd/apbatch/src/lib/librarysecurity.jar:/Users/tchu/Downloads/work/appbatch-ucsd/apbatch/src/lib/log4j-1.2.8.jar:/Users/tchu/Downloads/work/appbatch-ucsd/apbatch/src/lib/mail.jar:/Users/tchu/Downloads/work/appbatch-ucsd/apbatch/src/lib/ojdbc14.jar:/Users/tchu/Downloads/work/appbatch-ucsd/apbatch/src/lib/postgresql-9.3-1102-jdbc4.jar:/Users/tchu/Downloads/work/appbatch-ucsd/apbatch/src/lib/servlet.jar:/Users/tchu/Downloads/work/appbatch-ucsd/apbatch/tmp/webapp/WEB-INF/classes:/usr/local/Cellar/ant/1.9.6/libexec/lib/ant-launcher.jar:/usr/local/Cellar/ant/1.9.6/libexec/lib/ant.jar:/usr/local/Cellar/ant/1.9.6/libexec/lib/ant-junit.jar:/usr/local/Cellar/ant/1.9.6/libexec/lib/ant-junit4.jar" />
+    <property name="TSTAMP" value="1139" />
+    <property name="java.vm.specification.name" value="Java Virtual Machine Specification" />
+    <property name="ant.file.type" value="file" />
+    <property name="java.vm.specification.version" value="1.8" />
+    <property name="sun.cpu.endian" value="little" />
+    <property name="sun.os.patch.level" value="unknown" />
+    <property name="java.io.tmpdir" value="/var/folders/b6/vt3c8bzn489gfrsdz4wwb_y1cvg8dj/T/" />
+    <property name="java.vendor.url.bug" value="http://bugreport.sun.com/bugreport/" />
+    <property name="ant.file.common" value="/Users/tchu/Downloads/work/appbatch-ucsd/apbatch/common.xml" />
+    <property name="java.awt.graphicsenv" value="sun.awt.CGraphicsEnvironment" />
+    <property name="os.arch" value="x86_64" />
+    <property name="version_string" value="1.2.718" />
+    <property name="java.ext.dirs" value="/Users/tchu/Library/Java/Extensions:/Library/Java/JavaVirtualMachines/jdk1.8.0_45.jdk/Contents/Home/jre/lib/ext:/Library/Java/Extensions:/Network/Library/Java/Extensions:/System/Library/Java/Extensions:/usr/lib/java" />
+    <property name="user.dir" value="/Users/tchu/Downloads/work/appbatch-ucsd/apbatch" />
+    <property name="appName" value="apbatch" />
+    <property name="line.separator" value="&#xa;" />
+    <property name="java.vm.name" value="Java HotSpot(TM) 64-Bit Server VM" />
+    <property name="ant.file.type.apbatch" value="file" />
+    <property name="basedir" value="/Users/tchu/Downloads/work/appbatch-ucsd/apbatch" />
+    <property name="root" value="/Users/tchu/Downloads/work/appbatch-ucsd/apbatch/src/root" />
+    <property name="ant.java.version" value="1.8" />
+    <property name="ant.core.lib" value="/usr/local/Cellar/ant/1.9.6/libexec/lib/ant.jar" />
+    <property name="file.encoding" value="UTF-8" />
+    <property name="war.name" value="apbatch" />
+    <property name="java.specification.version" value="1.8" />
+    <property name="ant.project.invoked-targets" value="junitreport" />
+    <property name="user.version" value="" />
+  </properties>
+  <testcase classname="edu.ucsd.library.apbatch.ProcessFileTest" name="testProcessOutFile" time="0.039">
+    <error type="java.lang.NullPointerException">java.lang.NullPointerException
+	at edu.ucsd.library.apbatch.ApbatchConnection.getTestConnection(ApbatchConnection.java:31)
+	at edu.ucsd.library.apbatch.ProcessFile.getTaxCode(ProcessFile.java:711)
+	at edu.ucsd.library.apbatch.ProcessFile.processOutFile(ProcessFile.java:591)
+	at edu.ucsd.library.apbatch.ProcessFileTest.testProcessOutFile(ProcessFileTest.java:31)
+</error>
+  </testcase>
+  <system-out><![CDATA[Error loading properties file!-filePath:/Users/tchu/Downloads/work/appbatch-ucsd/apbatch/common/apbatch/datasource.properties
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
