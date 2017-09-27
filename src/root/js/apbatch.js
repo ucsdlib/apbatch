@@ -241,7 +241,8 @@ function sendDataToServer()
 			});	
 			  //Action event for delete button in the Pending Queue
 			 $("#delBtnPen").bind("click",function(){
-				 var selector_checked = $("input[@id=chkDisplay]:checked").length; 
+				 //var selector_checked = $("input[@id=chkDisplay]:checked").length;
+				 var selector_checked = $("input[@id=chkDisplayVoucher]:checked").length;  
 				 if(selector_checked == 0)
 				 {
 					 alert("Please select at least one record!");
@@ -250,7 +251,8 @@ function sendDataToServer()
 				 {
 					 //$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
 					 //var valArray = $("input[id='chk']").fieldArray();
-					 var myString = $("input[id='chkDisplay']").getValue();
+					 //var myString = $("input[id='chkDisplay']").getValue();
+					 var myString = $("input[id='chkDisplayVoucher']").getValue();
 					 var valArray = myString.tokenize(",", " ", true);
 					 tokensPending = valArray;
 					 var whichQueue = 'P';
@@ -1213,10 +1215,14 @@ function sendDataToServer()
 		function appendRow(row){
 			//alert(row.voucherNo);
 			var rows =  $("<tr></tr>");
+			var col0 = $("<td></td>");
+		    var chkboxVoucher = $('<input type="checkbox" id ="chkDisplayVoucher" value = '+row.voucherNo+'='+row.recType+' />')		
 			var col = $("<td></td>");
 		    var chkbox = $('<input type="checkbox" id ="chkDisplay" value = '+row.recType+' />')
-		    if(row.voucherNo != 'TOTAL')
+		    if(row.voucherNo != 'TOTAL') {
+		        col0.append(chkboxVoucher);
 				col.append(chkbox);
+			}
 			var col1 =  $("<td></td>").html($.trim(row.voucherNo));
 			var col2 =  $("<td></td>").html($.trim(row.recType));
 			var col3 =  $("<td></td>").html($.trim(row.fundCode));
@@ -1242,7 +1248,7 @@ function sendDataToServer()
 
 			//rows.append(col).append(col1).append(col2).append(col3).append(col4).append(col5).append(col6).append(col7).append(col8).append(col9).append(col10).append(col11).append(col12).append(col13).append(col14).append(col15).append(col16).append(col17).append(col18).append(col19).append(col20).append(col21).append(col22);
 			//rows.append(col).append(col1).append(col2).append(col3).append(col4).append(col5).append(col6).append(col7).append(col8).append(col9).append(col10).append(col11).append(col12).append(col13).append(col14).append(col15).append(col16).append(col17).append(col18).append(col19).append(col21).append(col22);
-			rows.append(col).append(col1).append(col2).append(col3).append(col5).append(col6).append(col7).append(col8).append(col9).append(col10).append(col11).append(col12).append(col13).append(col19).append(col21).append(col22);
+			rows.append(col0).append(col).append(col1).append(col2).append(col3).append(col5).append(col6).append(col7).append(col8).append(col9).append(col10).append(col11).append(col12).append(col13).append(col19).append(col21).append(col22);
 			$("table.dataGrid").append(rows);
 			//==============
 		}
@@ -1570,6 +1576,9 @@ function sendDataToServer()
  function appendRow(row){
 		//alert(row.voucherNo);
 		var rows =  $("<tr></tr>");
+		var col0 = $("<td></td>");
+		var chkboxVoucher = $('<input type="checkbox" id ="chkDisplayVoucher" value = '+row.voucherNo+'='+row.recType+' />')		
+		col0.append(chkboxVoucher);
 		var col = $("<td></td>");
 	    var chkbox = $('<input type="checkbox" id ="chkDisplay" value = '+row.recType+' />')
 		col.append(chkbox);
@@ -1598,7 +1607,7 @@ function sendDataToServer()
 				
 		//rows.append(col).append(col1).append(col2).append(col3).append(col4).append(col5).append(col6).append(col7).append(col8).append(col9).append(col10).append(col11).append(col12).append(col13).append(col14).append(col15).append(col16).append(col17).append(col18).append(col19).append(col20).append(col21).append(col22);
 		//rows.append(col).append(col1).append(col2).append(col3).append(col4).append(col5).append(col6).append(col7).append(col8).append(col9).append(col10).append(col11).append(col12).append(col13).append(col14).append(col15).append(col16).append(col17).append(col18).append(col19).append(col21).append(col22);
-		rows.append(col).append(col1).append(col2).append(col3).append(col5).append(col6).append(col7).append(col8).append(col9).append(col10).append(col11).append(col12).append(col13).append(col19).append(col21).append(col22);
+		rows.append(col0).append(col).append(col1).append(col2).append(col3).append(col5).append(col6).append(col7).append(col8).append(col9).append(col10).append(col11).append(col12).append(col13).append(col19).append(col21).append(col22);
 		$("table.dataGrid").append(rows);
 		//==============
 	}
