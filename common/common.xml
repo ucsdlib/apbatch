@@ -101,6 +101,7 @@ need to be albe to include other dirs (html, jsp, xml, etc.), not just root...
     </copy>
     <copy todir="${webapp}/WEB-INF/classes">
       <fileset dir="${filtered}" includes="**/*.properties"/>
+      <fileset dir="." includes="log4j.properties"></fileset>    	
     </copy>
   </target>
 

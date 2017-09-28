@@ -73,6 +73,7 @@
 					<table class='dataGrid'>
 						<thead>
 							<tr>
+							    <th>Delete</th>
 							    <th> </th>
 								<th>Voucher</th>
 								<th>P.O. Number</th>
