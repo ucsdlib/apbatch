@@ -46,6 +46,7 @@ public class ModifyQueues extends HttpServlet {
 	}	
 	
 	public void doPost(HttpServletRequest request,HttpServletResponse response){
+		System.out.println("start deleting");
 		//get SOLR query and callback
 		log.info("MODIFYQUEUES: $$$$$$$$$ BEFORE $$$$$$$$$$$$$$");
 					session = request.getSession();
@@ -54,6 +55,7 @@ public class ModifyQueues extends HttpServlet {
 					 problemArr =(session.getAttribute("problemData") != null ) ? (JSONArray)session.getAttribute("problemData") : null;
 					 sumAmtObj = (session.getAttribute("SUM") != null ) ? (Double)session.getAttribute("SUM") : null;
 					 log.info("MODIFYQUEUES: Found data from session");
+					 log.info("deleted data - "+deleted);
 					 //sumAmtObj = new Double(sumAmtObjString.substring(1));
 					 //log.info("sumAmtObjString="+sumAmtObjString);
 					// log.info("sumAmtObj="+sumAmtObj);
@@ -140,6 +142,7 @@ public class ModifyQueues extends HttpServlet {
 		boolean flag = false;
 		JSONArray newPending = new JSONArray();
 		int tokencount= temp.length;
+		String voucherRecType = "";
 		for(int i=0; i < dummy.size();i++)
 		  {
 			 if(i== (dummy.size()-1))  
@@ -152,8 +155,9 @@ public class ModifyQueues extends HttpServlet {
 			  JSONObject obj = (JSONObject)dummy.get(i);
 			  for(int j=0; j<tokencount;j++)
 			  {
-				 
-				  if((obj.get("recType")).equals(temp[j]))
+				  voucherRecType = (obj.get("voucherNo") + "=" + obj.get("recType")).trim();
+				  if(voucherRecType.equals(temp[j].trim()))
+				  //if((obj.get("recType")).equals(temp[j]))
 				  {
 					  flag = true;
 					  break;
@@ -183,17 +187,20 @@ public class ModifyQueues extends HttpServlet {
 		boolean flag = false;
 		//JSONArray newPending = new JSONArray();
 		int tokencount= temp.length;
+		String voucherRecType = "";
 		for(int i=0; i < dummy.size();i++)
 		  {
 			 //flag = false;
 			  JSONObject obj = (JSONObject)dummy.get(i);
 			  for(int j=0; j<tokencount;j++)
 			  {
-				 
-				  if((obj.get("recType")).equals(temp[j]))
+				  voucherRecType = (obj.get("voucherNo") + "=" + obj.get("recType")).trim();
+				  //if((obj.get("recType")).equals(temp[j]))
+				  if(voucherRecType.equals(temp[j].trim()))
 				  {
 					  //flag = true;
 					 // break;
+					  log.info("obj voucher recType"+voucherRecType + " - tmp voucher+recType:" + temp[j]);
 					  deleted.add(obj);  
 				  }
 			  }
@@ -229,14 +236,16 @@ public class ModifyQueues extends HttpServlet {
 		tempUseTax = Double.parseDouble(useTax.substring(1));
 		tempShip = Double.parseDouble(ship.substring(1));
 		tempDisc = Double.parseDouble(discount.substring(1));
+		String voucherRecType = "";
 		for(int i=0; i < dummy.size();i++)
 		  {
 			
 			  JSONObject tempObj = (JSONObject)dummy.get(i);
 			  for(int j=0; j<tokencount;j++)
 			  {
-				 
-				  if((tempObj.get("recType")).equals(temp[j]))
+				  voucherRecType = (tempObj.get("voucherNo") + "=" + tempObj.get("recType")).trim();
+				  if(voucherRecType.equals(temp[j].trim()))
+				  //if((tempObj.get("recType")).equals(temp[j]))
 				  {
 					  	String amount2 =((String)tempObj.get("amount")).trim();
 						String tax2 =((String)tempObj.get("tax")).trim();
@@ -303,14 +312,16 @@ public class ModifyQueues extends HttpServlet {
 		log.info("Previous sumObj="+sumObj);
 		int tokencount= temp.length;
 		double sum = Double.valueOf(sumObj);
+		String voucherRecType = "";
 		for(int i=0; i < pending.size();i++)
 		  {
 			
 			  JSONObject tempObj = (JSONObject)pending.get(i);
 			  for(int j=0; j<tokencount;j++)
 			  {
-				 
-				  if((tempObj.get("recType")).equals(temp[j]))
+				  voucherRecType = (tempObj.get("voucherNo") + "=" + tempObj.get("recType")).trim();
+				  //if((tempObj.get("recType")).equals(temp[j]))
+				  if(voucherRecType.equals(temp[j].trim()))
 				  {
 					  	String amount2 =((String)tempObj.get("amount")).trim();
 						String tax2 =((String)tempObj.get("tax")).trim();
@@ -325,7 +336,7 @@ public class ModifyQueues extends HttpServlet {
 						double tempSum= tempAmt2+ tempTax2+tempUseTax2+tempShip2+tempDisc2;
 						log.info("tempSum="+tempSum);
 						sum -= tempSum;
-						
+						log.info("new sum="+sum);
 				  }
 			  }
 			
