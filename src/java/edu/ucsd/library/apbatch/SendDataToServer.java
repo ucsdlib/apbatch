@@ -565,12 +565,8 @@ public class SendDataToServer  {
 			  out.append("PRODUCTION DATASET NAME");	
 			  out.append("\r\n");	  
 			  out.append("\r\n");
-			  out.append("Thank you,");
+			  out.append("Thank you");
 			  out.append("\r\n");
-			  if(emailAddress.startsWith("ssayavanh")) 
-				  out.append("Sone");
-			  else
-				  out.append("Roger");
 			  
 			  return out.toString();
 	  
