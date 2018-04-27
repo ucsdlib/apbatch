@@ -2,6 +2,8 @@
 
 ApBatch is a tool to manage electrical invoices, vendors and indexes for UCSD Library.  It is converted from FoxPro to a web based application.
 
+Making a test for Jenkins
+
 ## Requirements 
 
 * JDK 1.7
