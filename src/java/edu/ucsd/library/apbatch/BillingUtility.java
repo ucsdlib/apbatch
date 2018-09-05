@@ -484,7 +484,7 @@ public class BillingUtility {
 				if(docSeqNum == 0){
 					docSeqNo = getDocSeqNo();
 					long docSeqNoLong= Long.parseLong(docSeqNo);
-					//log.info("LASTDOCNUM ="+docSeqNoLong);	
+					log.info("LASTDOCNUM ="+docSeqNoLong);	
 					docSeqNum = docSeqNoLong;
 					finalSeqNo =docSeqNum;
 				}
@@ -1027,7 +1027,7 @@ public class BillingUtility {
 			  pstmt.setInt(2, Integer.parseInt(getDocSeqNo()));
 			  pstmt.execute();
 			 
-			  //log.info(" $$$$  oldSeqNo:"+ getDocSeqNo()+ " newSeqNo:"+newSeqNo);
+			  log.info(" $$$$  oldSeqNo:"+ getDocSeqNo()+ " newSeqNo:"+newSeqNo);
 			  //rs.close();
 			 
 		}
