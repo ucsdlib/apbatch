@@ -138,7 +138,7 @@ public class BillingUtility {
 					 //log.info("tempInvoiceNo:"+tempInvoiceNo);
 					if(getPayeeId(((String)obj.get("vendorCode")).trim()) == null) {
 						System.out.println("Missing VedorCode: "+obj.toString());
-						errorVec.add("Missing VedorCode: "+obj.toString());
+						errorVec.add("Missing VedorCode: "+obj.toString()+" for invoice #"+(String)obj.get("invNo"));
 					}
 					if(invoiceNo.equals(tempInvoiceNo))
 					{
@@ -276,7 +276,7 @@ public class BillingUtility {
 					 //log.info("tempInvoiceNo:"+tempInvoiceNo);
 					if(getPayeeId(((String)obj.get("vendorCode")).trim()) == null) {
 						System.out.println("Missing VedorCode:"+obj.toString());
-						errorVec.add("Missing VedorCode "+obj.toString());						
+						errorVec.add("Missing VedorCode "+obj.toString()+" for invoice #"+(String)obj.get("invNo"));						
 					}
 					if(invoiceNo.equals(tempInvoiceNo))
 					{
@@ -367,7 +367,7 @@ public class BillingUtility {
 				   errorVec.add("Missing AccountCode:"+accCode);
 			   } 
 			   if(getPayeeId(((String)obj.get("vendorCode")).trim()) == null) {
-				   errorVec.add("Missing VedorCode:"+(String)obj.get("vendorCode"));
+				   errorVec.add("Missing VedorCode:"+(String)obj.get("vendorCode")+" for invoice #"+(String)obj.get("invNo"));
 			   }
 			}
 		}
@@ -943,6 +943,10 @@ public class BillingUtility {
 		Statement stmt = null;
 		String payeeId = null;
 		 String vendCode = vendcode.toUpperCase();
+		if (vendcode.equals("")) {
+		    log.info("No Vendor code");
+		    return null;
+		} 
 		try{
 			if(useTestConnection == true)
 			  con = ApbatchConnection.getTestConnection();
@@ -964,8 +968,7 @@ public class BillingUtility {
 		catch (SQLException e) {	
 			log.error("$$$ SQLException in getPayeeId()",e);			
 		} 
-	
-		
+ 
 		return payeeId;
 	}
 	
