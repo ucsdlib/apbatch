@@ -136,7 +136,7 @@ public class BillingUtility {
 					//compare for same invoice no
 					String tempInvoiceNo =((String)obj.get("invNo")).trim();
 					 //log.info("tempInvoiceNo:"+tempInvoiceNo);
-					if(getPayeeId(((String)obj.get("vendorCode")).trim()) == null) {
+					if(!((String)obj.get("voucherNo")).equals("TOTAL") && getPayeeId(((String)obj.get("vendorCode")).trim()) == null) {
 						System.out.println("Missing VedorCode: "+obj.toString());
 						errorVec.add("Missing VedorCode: "+obj.toString()+" for invoice #"+(String)obj.get("invNo"));
 					}
@@ -274,7 +274,7 @@ public class BillingUtility {
 					//compare for same invoice no
 					String tempInvoiceNo =((String)obj.get("invNo")).trim();
 					 //log.info("tempInvoiceNo:"+tempInvoiceNo);
-					if(getPayeeId(((String)obj.get("vendorCode")).trim()) == null) {
+					if(!((String)obj.get("voucherNo")).equals("TOTAL") && getPayeeId(((String)obj.get("vendorCode")).trim()) == null) {
 						System.out.println("Missing VedorCode:"+obj.toString());
 						errorVec.add("Missing VedorCode "+obj.toString()+" for invoice #"+(String)obj.get("invNo"));						
 					}
