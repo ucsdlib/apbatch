@@ -515,10 +515,9 @@ function sendDataToServer()
 			        $(".pop").slideFadeToggle();
 			        $('#eia_index').focus();
 			        $('#eia_popup_send').click(function() {
-						if($.trim($('#eia_index').val()).length != 7 ||
-								$.trim($('#eia_index').val()).substring(0,3) != 'LIB') {
+						if($.trim($('#eia_index').val()).length != 7) {
 							$.unblockUI();
-							$.blockUI({ message: 'Index must be exactly 7 characters and start with "LIB"'});
+							$.blockUI({ message: 'Index must be exactly 7 characters'});
 							setTimeout($.unblockUI, 500);
 						} else if($.trim($('#eia_fund').val()).length != 6 ||
 								/*!editIndexes_checkIsNumeric('#eia_fund', 0, 5) ||*/
@@ -1021,10 +1020,9 @@ function sendDataToServer()
 	        $(".pop").slideFadeToggle();
 	        $('#eia_vendor_name').focus();
 	        $('#eia_popup_send').click(function() {
-				if($.trim($('#eia_index').val()).length != 7 ||
-						$.trim($('#eia_index').val()).substring(0,3) != 'LIB') {
+				if($.trim($('#eia_index').val()).length != 7) {
 					$.unblockUI();
-					$.blockUI({ message: 'Index must be exactly 7 characters and start with "LIB"'});
+					$.blockUI({ message: 'Index must be exactly 7 characters'});
 					setTimeout($.unblockUI, 500);
 				} else if($.trim($('#eia_fund').val()).length != 6 ||
 						!editIndexes_checkIsNumeric('#eia_fund', 0, 5) ||
