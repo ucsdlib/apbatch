@@ -519,12 +519,9 @@ function sendDataToServer()
 							$.unblockUI();
 							$.blockUI({ message: 'Index must be exactly 7 characters'});
 							setTimeout($.unblockUI, 500);
-						} else if($.trim($('#eia_fund').val()).length != 6 ||
-								/*!editIndexes_checkIsNumeric('#eia_fund', 0, 5) ||*/
-								!editIndexes_checkIsAlpha('#eia_fund', 5, 1)) {
+						} else if($.trim($('#eia_fund').val()).length != 6) {
 							$.unblockUI();
-							/*$.blockUI({ message: 'Fund must be exactly 6 characters, where the first 5 are digits and the last is a letter'});*/
-							$.blockUI({ message: 'Fund must be exactly 6 characters, where the last is a letter'});
+              $.blockUI({ message: 'Fund must be exactly 6 characters'});
 							setTimeout($.unblockUI, 500);
 						} else if($.trim($('#eia_org').val()).length != 6 ||
 								!editIndexes_checkIsNumeric('#eia_org', 0, -1)) {
@@ -1024,11 +1021,9 @@ function sendDataToServer()
 					$.unblockUI();
 					$.blockUI({ message: 'Index must be exactly 7 characters'});
 					setTimeout($.unblockUI, 500);
-				} else if($.trim($('#eia_fund').val()).length != 6 ||
-						!editIndexes_checkIsNumeric('#eia_fund', 0, 5) ||
-						!editIndexes_checkIsAlpha('#eia_fund', 5, 1)) {
+				} else if($.trim($('#eia_fund').val()).length != 6) {
 					$.unblockUI();
-					$.blockUI({ message: 'Fund must be exactly 6 characters, where the first 5 are digits and the last is a letter'});
+					$.blockUI({ message: 'Fund must be exactly 6 characters'});
 					setTimeout($.unblockUI, 500);
 				} else if($.trim($('#eia_org').val()).length != 6 ||
 						!editIndexes_checkIsNumeric('#eia_org', 0, -1)) {
