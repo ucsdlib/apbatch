@@ -64,12 +64,7 @@ public class CheckExtFundCode extends HttpServlet {
 		try{
 			
 			String accountCode2 = null;
-			int index2 =extFundCode.lastIndexOf("LIB");
-			int indexHy2 = extFundCode.indexOf("-");
-			if(indexHy2 > 0)
-			accountCode2 = extFundCode.substring(index2,indexHy2);
-			else
-			accountCode2 = extFundCode.substring(index2);
+			accountCode2 = BillingUtility.getAccountCode(extFundCode);
 			int count = checkExtFundCodeCount(accountCode2);
 			log.info("count: "+count);
 			results.put("TOT", count);
@@ -87,6 +82,7 @@ public class CheckExtFundCode extends HttpServlet {
 		}
 		
 	}
+
 	private int checkExtFundCodeCount(String fundCode) {
       
         Connection conn = null;
