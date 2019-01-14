@@ -351,17 +351,23 @@ public class BillingUtility {
 		
 	}
 	public static boolean validateData(JSONArray rows, Vector errorVec) {
-		String tempAccCode = null; 
+		String tempAccCode = null;
+		String[] externalFundPrefix = {"LIB","IRP","GPS","PED","VIS","VCA","MCH","SOM","MGT"}; 
 		for(int i = 0; i < rows.size()-1; i++){
 			JSONObject obj = (JSONObject)rows.get(i);
 			if(!((String)obj.get("voucherNo")).equals("TOTAL")){
-				tempAccCode =((String)obj.get("externalFund")).trim();
-				
-			    int index =tempAccCode.lastIndexOf("LIB");
-			    			  
+			   tempAccCode =((String)obj.get("externalFund")).trim();
+							    			  
 			   String accCode = null;
-			   accCode = tempAccCode.substring(index,index+7); 
-						   
+			   int index = 0;
+			   
+			   for(int j = 0; j < externalFundPrefix.length; j++) {
+			       if(tempAccCode.contains(externalFundPrefix[j].toString())) {
+	                   index =tempAccCode.lastIndexOf(externalFundPrefix[j].toString());
+			           accCode = tempAccCode.substring(index,index+7);
+			           break;
+			       }
+			   }  
 			   if(getFundCode(accCode) == null) {
 				  
 				   errorVec.add("Missing AccountCode:"+accCode);
