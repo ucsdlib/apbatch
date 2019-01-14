@@ -352,22 +352,12 @@ public class BillingUtility {
 	}
 	public static boolean validateData(JSONArray rows, Vector errorVec) {
 		String tempAccCode = null;
-		String[] externalFundPrefix = {"LIB","IRP","GPS","PED","VIS","VCA","MCH","SOM","MGT"}; 
 		for(int i = 0; i < rows.size()-1; i++){
 			JSONObject obj = (JSONObject)rows.get(i);
 			if(!((String)obj.get("voucherNo")).equals("TOTAL")){
 			   tempAccCode =((String)obj.get("externalFund")).trim();
 							    			  
-			   String accCode = null;
-			   int index = 0;
-			   
-			   for(int j = 0; j < externalFundPrefix.length; j++) {
-			       if(tempAccCode.contains(externalFundPrefix[j].toString())) {
-	                   index =tempAccCode.lastIndexOf(externalFundPrefix[j].toString());
-			           accCode = tempAccCode.substring(index,index+7);
-			           break;
-			       }
-			   }  
+			   String accCode = getAccountCode(tempAccCode);
 			   if(getFundCode(accCode) == null) {
 				  
 				   errorVec.add("Missing AccountCode:"+accCode);
@@ -382,6 +372,21 @@ public class BillingUtility {
 		else
 			return true;
 	}
+
+	public static String getAccountCode(String externalFund) {
+        String accCode = null;
+        int index = 0;
+        String[] externalFundPrefix = {"LIB","IRP","GPS","PED","VIS","VCA","MCH","SOM","MGT"}; 
+        for(int j = 0; j < externalFundPrefix.length; j++) {
+            if(externalFund.contains(externalFundPrefix[j].toString())) {
+                index = externalFund.lastIndexOf(externalFundPrefix[j].toString());
+                accCode = externalFund.substring(index,index+7);
+                break;
+            }
+        }
+        return accCode;
+	}
+
 	public static boolean writeRecords(JSONArray temp,String username,String venderCode)
 	{ 
 	  String invNo =null;
@@ -417,16 +422,7 @@ public class BillingUtility {
 			 invDate =((String)obj.get("invDate")).trim();	
 			 taxCode = getTaxCode(vendCode.toUpperCase());
 			 //System.out.println(i+"vendCode"+vendCode+"-"+taxCode+"-"+tempAccCode);
-		   int index =tempAccCode.lastIndexOf("LIB");
-		   int indexHy = tempAccCode.lastIndexOf("-");
-		   //log.info("index:"+index);
-		 //  log.info("indexHy:"+indexHy);
-		   String accCode = null;
-		  /* if(indexHy > 0)
-		    accCode = tempAccCode.substring(index,indexHy);	           
-		   else
-			accCode = tempAccCode.substring(index); */
-		   accCode = tempAccCode.substring(index,index+7); 
+		   String accCode = getAccountCode(tempAccCode);
 		   //log.info("accCode:"+accCode);
 		  // log.info("=========flagWroteFirstLine================="+flagWroteFirstLine); 
 		   tmpPayeeId = getPayeeId(vendCode);
@@ -1258,18 +1254,7 @@ public class BillingUtility {
 			JSONObject row = (JSONObject)rows.get(i);
 			if(!((String)row.get("voucherNo")).equals("TOTAL")){
 				String accCode =((String)row.get("externalFund")).trim();
-				int index =accCode.lastIndexOf("LIB");
-				//int indexHy = accCode.indexOf("-");
-				int indexHy = accCode.lastIndexOf("-");
-				/*if(indexHy >0)
-				{
-				 accountCode = accCode.substring(index,indexHy);
-				}
-				else
-				{
-					accountCode = accCode.substring(index);	
-				}*/
-				accountCode = accCode.substring(index,index+7); 
+				accountCode = getAccountCode(accCode);
 				//log.info(" $$$$-------------  arrangeRecords");
 				//log.info(" $$$$  accountCode ="+accountCode);
 				if(v.size() >= 1)
@@ -1289,34 +1274,18 @@ public class BillingUtility {
 					newArr.add(row);
 					v.add(accountCode);
 				}
-				
-				
-				
-				
+								
 				for(int j=i+1; j< rows.size();j++)
 				{
 					JSONObject row2 = (JSONObject)rows.get(j);
 					String accCode2 =((String)row2.get("externalFund")).trim();
-					int index2 =accCode2.lastIndexOf("LIB");
-					//int indexHy2 = accCode2.indexOf("-");
-					int indexHy2 = accCode2.lastIndexOf("-");
-	
-					/*if(indexHy2 > 0)
-					accountCode2 = accCode2.substring(index2,indexHy2);
-					else
-					accountCode2 = accCode2.substring(index2);*/
-					accountCode2 = accCode2.substring(index,index+7); 
+					accountCode2 = getAccountCode(accCode2); 
 					if(accountCode.equalsIgnoreCase(accountCode2))
 					{
 						newArr.add(row2);
-					}
-					
-					
-					
+					}					
 				}
-			}
-			
-			
+			}			
 		}
 		//log.info(" $$$$  newArr ="+newArr.size());
 		for(int k =0; k<newArr.size();k++)
