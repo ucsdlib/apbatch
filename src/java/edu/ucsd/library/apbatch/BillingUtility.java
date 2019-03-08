@@ -62,7 +62,7 @@ public class BillingUtility {
 		}
 	}
 	private static Logger log = Logger.getLogger( BillingUtility .class );
-	public static long docSeqNum = 0;
+	public static long docSeqNum = Long.parseLong(getDocSeqNo());
 	
 	public static StringBuffer outStream = null;
 	//public static String taxCode = null;
