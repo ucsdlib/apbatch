@@ -359,7 +359,7 @@ public class BillingUtility {
 							    			  
 			   String accCode = getAccountCode(tempAccCode);
 			   if(getFundCode(accCode) == null) {
-				  
+				  System.out.println("Debugging : tempAccCode:"+tempAccCode+"-"+obj.toString());
 				   errorVec.add("Missing AccountCode:"+accCode);
 			   } 
 			   if(getPayeeId(((String)obj.get("vendorCode")).trim()) == null) {
@@ -376,7 +376,7 @@ public class BillingUtility {
 	public static String getAccountCode(String externalFund) {
         String accCode = null;
         int index = 0;
-        String[] externalFundPrefix = {"LIB","IRP","GPS","PED","VIS","VCA","MCH","SOM","MGT"}; 
+        String[] externalFundPrefix = {"LIB","IRP","GPS","PED","VIS","VCA","MCH","SOM","MGT","RMP"}; 
         for(int j = 0; j < externalFundPrefix.length; j++) {
             if(externalFund.contains(externalFundPrefix[j].toString())) {
                 index = externalFund.lastIndexOf(externalFundPrefix[j].toString());
