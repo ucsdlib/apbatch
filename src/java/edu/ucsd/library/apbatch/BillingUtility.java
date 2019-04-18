@@ -359,7 +359,7 @@ public class BillingUtility {
 							    			  
 			   String accCode = getAccountCode(tempAccCode);
 			   if(getFundCode(accCode) == null) {
-				  
+				  System.out.println("Debugging : tempAccCode:"+tempAccCode+"-"+obj.toString());
 				   errorVec.add("Missing AccountCode:"+accCode);
 			   } 
 			   if(getPayeeId(((String)obj.get("vendorCode")).trim()) == null) {
